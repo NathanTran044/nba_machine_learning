@@ -5,7 +5,8 @@ import pandas as pd
 import time
 from collections import OrderedDict
 
-year = range(1988, 2023)
+# year = range(1988, 2023)
+year = range(1990, 2023)
 
 for year in year:
     file_path = "/Users/nathantran/Documents/VSCode/salary_predictor/{}.csv".format(year)
@@ -18,11 +19,11 @@ for year in year:
 
     soup = BeautifulSoup(r.text, "html.parser")
 
-    test = soup.find(id="per_game_stats")
+    text = soup.find(id="per_game_stats")
 
     pattern = r'href="(/players[^"]*)"'
 
-    matches = re.findall(pattern, str(test))
+    matches = re.findall(pattern, str(text))
 
     matches = list(OrderedDict.fromkeys(matches)) #removes duplicates
 
@@ -31,6 +32,8 @@ for year in year:
     counter = 1
 
     for x in matches:
+        time.sleep(3)
+        print("trying", x)
         player_url = "https://www.basketball-reference.com/" + x
         r = requests.get(player_url)
         soup = BeautifulSoup(r.text, "html.parser")
@@ -80,7 +83,6 @@ for year in year:
 
         print("finish " + str(counter) + " " + x)
         counter += 1
-        time.sleep(3)
 
     all_players_table = all_players_table.reset_index(drop=True)
     all_players_table = all_players_table.rename_axis("Player")
