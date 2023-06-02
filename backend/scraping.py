@@ -6,7 +6,7 @@ import time
 from collections import OrderedDict
 
 # year = range(1988, 2023)
-year = range(1990, 2023)
+year = range(1985, 1988)
 
 for year in year:
     file_path = "/Users/nathantran/Documents/VSCode/salary_predictor/{}.csv".format(year)
@@ -60,6 +60,7 @@ for year in year:
                 break
         
         if salaries_comment is None:
+            print("No salary data")
             continue
 
         salaries_soup = BeautifulSoup(salaries_comment, "html.parser")
@@ -68,6 +69,7 @@ for year in year:
         try:
             index = salary_table.index.get_loc(season_str)
         except KeyError:
+            print("No salary year")
             continue
         if type(index) == slice: # chooses first salary if a player has multiple salaries in one year
             index = index.start
@@ -80,6 +82,8 @@ for year in year:
 
         if numeric_values.dtype == int: # makes sure a valid salary
             all_players_table = pd.concat([all_players_table, player_table])
+        else:
+            print("Not a valid salary")
 
         print("finish " + str(counter) + " " + x)
         counter += 1
