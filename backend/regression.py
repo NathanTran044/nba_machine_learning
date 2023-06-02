@@ -14,16 +14,16 @@ import csv
 # desired_year_input = input("What year would you like to place this player in? ")
 
 desired_player_input = "Stephen Curry"
-desired_player_year_input = 2018
+desired_player_year_input = 2019
 # desired_year_input = input("What year would you like to place this player in? ")
 
 # csv = "{}.csv".format(desired_year_input)
-csv = "1988.csv"
+csv = "/Users/nathantran/Documents/VSCode/salary_predictor/backend/csv_data/2020.csv"
 
 df = pd.read_csv(csv)
 
-sorted_df = df.sort_values('Salary', ascending=False)
-sorted_df.to_csv("hi.csv")
+# sorted_df = df.sort_values('Salary', ascending=False)
+# sorted_df.to_csv("hi.csv")
 
 target_column = ["Salary"]
 predictors = df.columns[~df.columns.isin(["Player", "Tm", "Lg", "Pos", "Salary"])]

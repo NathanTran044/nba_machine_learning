@@ -6,7 +6,7 @@ import time
 from collections import OrderedDict
 
 # year = range(1988, 2023)
-year = range(1985, 1988)
+year = range(1980, 1985)
 
 for year in year:
     file_path = "/Users/nathantran/Documents/VSCode/salary_predictor/{}.csv".format(year)
