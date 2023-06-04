@@ -1,38 +1,120 @@
-.App {
+.parent {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fffff2c2;
+  
+}
+
+.header {
+  padding: 5px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: #00A36C;
   color: white;
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.text-1 {
+  margin-top: 100px;
+  margin-left: 65px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.desired_player_year {
+  margin-left: 65px;
+  width: 200px;
+}
+
+.year_label-1 {
+  margin-left: 65px;
+  width: 200px;
+}
+
+.text-2 {
+  margin-top: 50px;
+  margin-left: 65px;
+}
+
+.desired_player {
+  margin-left: 65px;
+  width: 400px;
+}
+
+.text-3 {
+  margin-top: 50px;
+  margin-left: 65px;
+}
+
+.desired_year {
+  margin-left: 65px;
+  width: 200px;
+}
+
+.year_label-2 {
+  margin-left: 65px;
+  width: 200px;
+}
+
+.submit_button {
+  margin-left: 65px;
+  margin-top: 70px;
+  background-color: #4CAF50;
+  border: blue;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.reset {
+  margin-left: 15px;
+  margin-top: 70px;
+  background-color: red;
+  border: blue;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.host {
+  display: inline-block;
+}
+
+.client {
+  float: right;
+  display: flex; /* Apply flexbox to the parent container */
+  align-items: flex-start;
+}
+
+.name {
+  font-size: x-large;
+  margin-top: 35px;
+}
+
+.stats-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 200px;
+  position: relative;
+  left: -265px;
+  margin-top: 75px;
+}
+
+.stats-column {
+  padding: 10px;
+}
+
+.salary {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 825px;
+  margin-top: 1px;
 }
